@@ -337,6 +337,8 @@ import { SendOutlined, CloseOutlined, ReloadOutlined } from "@ant-design/icons";
 import axios from "axios";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import image from "../../../public/pic.png";
+
 import { SERVER_URL } from "../../config";
 import "./ChatWidget.css";
 
@@ -519,7 +521,7 @@ export default function ChatWidget() {
         <div className="chat-popup">
           <div className="chat-popup-header">
             <div className="chat-header-left">
-              <img className="chat-header-logo" src={BOT_LOGO} alt="Densmore Insurance" />
+              <img className="chat-header-logo" src={image} alt="Densmore Insurance" />
               <span>Live Chat</span>
             </div>
 
@@ -539,7 +541,7 @@ export default function ChatWidget() {
             {messages.map((msg, index) => (
               <div key={index} className={`message-row ${msg.sender === "user" ? "user-row" : "bot-row"}`}>
                 {msg.sender !== "user" && (
-                  <img className="bot-avatar" src={BOT_LOGO} alt="Densmore Insurance" />
+                  <img className="bot-avatar" src={image} alt="Densmore Insurance" />
                 )}
 
                 <div className={msg.sender === "user" ? "user-message" : "bot-message"}>
